@@ -128,7 +128,7 @@ const Signin = (props) => {
 
   return (
     <>
-      <div className={`row d-flex align-items-center ${classes.container}`}>
+        
         <motion.form
           key={props.pagename}
           className={`border-bottom-0 ${classes.form}`}
@@ -195,32 +195,7 @@ const Signin = (props) => {
             />
           </div>
 
-          {props.pagename === "Signup" && <><div className="input-group mb-3">
-            <input
-              className="form-control"
-              type="address"
-              id="address"
-              autoComplete="on"
-              placeholder="address"
-              ref={addressInputRef}
-              title="Please enter a valid address"
-              required
-            />
-          </div>
-            <div className="input-group mb-3">
-              <input
-                className="form-control"
-                type="text"
-                id="code"
-                autoComplete="off"
-                placeholder="secretCode"
-                ref={codeInputRef}
-                title="Please enter a valid authentication code"
-                required
-              />
-            </div>
-          </>
-          }
+         
 
 
           <div className="input-group mb-3">
@@ -234,7 +209,7 @@ const Signin = (props) => {
               title="Password must be at least 8 characters long"
               required
             />
-            <span className="input-group-text" style={{ marginBottom: '40px' }} onClick={handleTogglePassword}>
+            <span className="input-group-text"  onClick={handleTogglePassword}>
               {showPassword ? <RiEyeOffFill /> : <RiEyeFill />}
             </span>
           </div>
@@ -274,7 +249,7 @@ const Signin = (props) => {
             </b>
           </div>
         </motion.form>
-      </div>
+       
     </>
   );
 };

@@ -8,13 +8,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
 }
 body,
 html {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
+  /* background-image: linear-gradient(to bottom, #7d8e9f, #000508); */
+  background-size: cover;
 }
 
 code {

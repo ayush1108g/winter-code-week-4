@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (<>
     <nav className={classes.navbar}>
-      <ul >
+      <ul>
         <li>Home</li>
         <li>Courses</li>
         <li>Contact us</li>

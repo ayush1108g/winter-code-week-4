@@ -83,6 +83,7 @@ function MainComp() {
             <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', overflowX: 'clip' }} />}
 
         </div>
+        <SignupPage/>
         <RoutesWithAnimation />
       </div>
     </>

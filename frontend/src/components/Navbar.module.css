@@ -1,12 +1,13 @@
 /* Basic CSS for the navbar */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
 .navbar {
-  background-image: linear-gradient(to bottom, #2e8dcc, #1c4f71);
+  background-image: linear-gradient(to bottom, #2470a2, #0b1f2c);
   color: white;
   padding: 15px;
   width: 100%;
   position: sticky;
   top: 0%;
+  z-index: 1000;
 }
 
 .navbar ul {
