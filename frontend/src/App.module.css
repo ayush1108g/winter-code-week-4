@@ -1,0 +1,10 @@
+.gradient {
+  background: -webkit-linear-gradient(0deg, #ff0000, blue);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3em;
+  display: inline-block;
+  text-align: center;
+  margin-left: 40%;
+  max-width: fit-content;
+}
