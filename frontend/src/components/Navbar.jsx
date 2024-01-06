@@ -6,7 +6,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { FaShoppingCart } from "react-icons/fa";
 import SidebarContext from "../store/sidebar-context";
 import { useContext, useEffect, useState } from "react";
-import Sidebar from "./sidebar";
+import Sidebar from "./SideBar";
 import axios from 'axios';
 import { ToLink } from '../App';
 import { useRef } from "react";
