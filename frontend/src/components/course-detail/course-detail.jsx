@@ -1,4 +1,4 @@
-import Img1 from "../store/img1.avif";
+import Img1 from "../../store/img1.avif";
 // import Button from '../UI/Button';
 import "./course-detail.css";
 export default function CourseDetail() {
