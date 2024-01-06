@@ -1,9 +1,11 @@
 import classes from "./App.module.css";
+import CourseDetail from "./components/course-detail";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes, useLocation, HashRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
+// import SideBar from "./components/SideBar";
 import { useContext } from "react";
 import SidebarContext from "./store/sidebar-context";
 
@@ -41,12 +43,59 @@ function RoutesWithAnimation() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/team" element={<TeamPage />} />
         <Route path="/" element={<HomePage />} />
+        <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="*" element={<Errorpage />} />
       </Routes>
     </AnimatePresence>
   );
 }
 
+// function App() {
+//   const screenWidth = window.innerWidth;
+//   return (
+//     <HashRouter>
+//       <div>
+//         <div
+//           className="d-none d-lg-block"
+//           style={{
+//             position: "fixed",
+//             width: "18rem",
+//             backgroundColor: "black",
+//           }}
+//         >
+//           {/* <SideBar /> */}
+          
+//         </div>
+//         <div
+//           className={`h1 d-flex justify-content-center ${classes.gradient}`}
+//           style={{
+//             width: "100vw",
+//             height: "auto",
+//             padding: "10px",
+//             zIndex: 10,
+//           }}
+//         >
+//           {" "}
+//           EduShop
+//         </div>
+//         <div className="navbar-expand-lg d-lg-none">
+//           <Navbar />
+//         </div>
+//         <div
+//           className=""
+//           style={{
+//             marginLeft: screenWidth > 992 ? "24rem" : "2rem",
+//             height: "100dvh",
+//             overflowY: "auto",
+//           }}
+//         >
+//           <RoutesWithAnimation />
+//           <div style={{ width:"100%", height: "15vh" }}></div>
+//         </div>
+//       </div>
+//       <CourseDetail></CourseDetail>
+//     </HashRouter>
+    
 function MainComp() {
   const sidebarCtx = useContext(SidebarContext);
   const location = useLocation();
