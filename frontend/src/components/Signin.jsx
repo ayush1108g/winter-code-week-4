@@ -11,7 +11,7 @@ const Signin = (props) => {
   const [errormsg, setErrormsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+  const [loginstate,setloginstate] = useState('Signup');
   const codeInputRef = useRef();
   const nameInputRef = useRef();
   const phoneInputRef = useRef();
@@ -25,10 +25,11 @@ const Signin = (props) => {
   };
 
   const loginpageHandler = () => {
-    if (props.pagename === "Signup") {
-      navigate("/login");
-    } else {
-      navigate("/signup");
+    if(loginstate==="Signup") {
+      setloginstate("Login");
+    }
+    else{
+      setloginstate("Signup")
     }
   };
   const forgotPasswordHandler = () => {
@@ -145,7 +146,8 @@ const Signin = (props) => {
             exit="exit"
             className={classes.box}
           ></motion.div>
-          {props.pagename === "Signup" && (
+          <h3>{loginstate === "Signup" ? "Sign UP" : "Log in"}</h3>
+          {loginstate === "Signup" && (
             <motion.div
               initial={{ height: 0 }}
               animate={{ height: "auto" }}
@@ -153,7 +155,7 @@ const Signin = (props) => {
               transition={{ duration: 0.5, ease: "easeInOut" }}
               className="w-100"
             >
-              <h3>Sign Up</h3>
+              
               <div className="input-group mb-3">
                 <input
                   className="form-control"
@@ -230,8 +232,8 @@ const Signin = (props) => {
                 onClick={loginpageHandler}
                 className={"small font-monospace text-center row text-dark " + classes.signin}
               >
-                {props.pagename === "Signup" ? "Already" : "Don't"} have an
-                account? {props.pagename === "Signup" ? "Login " : "Signup"}
+                {loginstate === "Signup" ? "Already" : "Don't"} have an
+                account? {loginstate === "Signup" ? "Login " : "Signup"}
               </p>
               <motion.p
                 initial={{ height: 0 }}
@@ -242,7 +244,7 @@ const Signin = (props) => {
                 onClick={forgotPasswordHandler}
               >
                 {" "}
-                {props.pagename === "Login"
+                {loginstate === "Login"
                   ? "Forgot Password?"
                   : "                  "}
               </motion.p>
