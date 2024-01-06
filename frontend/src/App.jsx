@@ -38,11 +38,11 @@ function RoutesWithAnimation() {
         {/* <Route path="/login" element={<LoginPage />} /> */}
         <Route path="/forgotpassword" element={<ForgotPassPage />} />
         <Route
-          path="/login/forgotpassword/:id"
+          path="/forgotpassword/:id"
           element={<ForgotPassIDPage />}
         />
         <Route
-          path="/login/forgotpassword/:id/confirm"
+          path="/forgotpassword/:id/confirm"
           element={<ForgotPassConfirmPage />}
         />
         {/* <Route path="/signup" element={<SignupPage />} /> */}
@@ -77,7 +77,7 @@ function MainComp() {
           Edu-Tech
         </div>
         <Navbar />
-        <div
+        <div id='toppage'
         // style={{ width: "100vw", height: "100vh" }}
         >
           {/* {location.pathname === "/"&& */}

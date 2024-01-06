@@ -1,9 +1,11 @@
 import { scrollToHandler } from '../../store/scrollTo';
 import './categories.css';
+// import { useEffect } from 'react';
 // import { useLocation } from 'react-router';
 // import { useNavigate } from 'react-router-dom';
 
 export default function Categories(props) {
+
 
 
     return (

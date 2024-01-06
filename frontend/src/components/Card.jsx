@@ -1,18 +1,15 @@
 import Img1 from "../store/img1.avif";
 import "./card.css";
-export default function Card() {
+export default function Card(props) {
   return (
     <div id="card-detail">
       <span id="card-title">
-        <img src={Img1} alt="" />
+        <img src={props.image || Img1} alt={props.title} style={{ minWidth: '25vw' }} />
       </span>
       <span id="card-list">
-        <h1>This Course Contains:</h1>
+        <h1>{props.title.split(" ").splice(0, 15).join(" ") || 'This Course Contains:'}</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Necessitatibus quia provident dolores? Labore debitis fuga blanditiis
-          provident possimus, quae rerum repellat minima beatae tenetur
-          consequatur harum ab totam repellendus laborum!
+          {props.description.replace(/<[^>]+>/g, "").split(" ").splice(0, 75).join(" ") || 'This Course Contains: ...'}
         </p>
       </span>
     </div>
