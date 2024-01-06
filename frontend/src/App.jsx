@@ -81,7 +81,7 @@ function MainComp() {
         // style={{ width: "100vw", height: "100vh" }}
         >
           {/* {location.pathname === "/"&& */}
-          <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', overflowX: 'clip' }} />
+          <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', height: "80vh", overflowX: 'clip' }} />
 
         </div>
         <SignupPage />
