@@ -36,7 +36,7 @@ const TeamPage = () => {
     }
 
     return (
-        <div id="teampage">
+        <div id="teampage" style={{marginBottom:"1cm"}}>
             <div style={{ width: '100%', height: '5vh' }}></div>
             <div className="h2 d-flex justify-content-center">Our Team</div>
             <br /> <br />

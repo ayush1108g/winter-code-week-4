@@ -32,7 +32,10 @@
 
 footer {
   padding-top: 50px;
-  margin-top: 3%;
+/* margin-top: 1%; */
+/* border-color: aliceblue; */
+/* border-width:  solid; */
+border-top: #888686 solid;
 }
 
 .footer-category {
