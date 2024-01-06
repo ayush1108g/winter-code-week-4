@@ -11,12 +11,11 @@ import axios from 'axios';
 import { ToLink } from '../App';
 import { useRef } from "react";
 
-
 const Navbar = () => {
-  
+
   return (<>
-    <nav>
-      <ul>
+    <nav className={classes.navbar}>
+      <ul >
         <li>Home</li>
         <li>Courses</li>
         <li>Contact us</li>

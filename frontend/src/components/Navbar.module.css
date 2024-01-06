@@ -1,6 +1,6 @@
 /* Basic CSS for the navbar */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@500&display=swap');
-nav {
+.navbar {
   background-image: linear-gradient(to bottom, #2e8dcc, #1c4f71);
   color: white;
   padding: 15px;
@@ -9,7 +9,7 @@ nav {
   top: 0%;
 }
 
-ul {
+.navbar ul {
   list-style: none;
   padding: 0;
   display: flex;
@@ -17,7 +17,7 @@ ul {
   margin-top: 0.5rem;
 }
 
-li {
+.navbar ul li {
   margin-right:85px;
   cursor: pointer;
   color: white;
@@ -25,6 +25,6 @@ li {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-li:hover {
+.navbar ul li:hover {
   color: #070706; /* Change the color on hover */
 }
