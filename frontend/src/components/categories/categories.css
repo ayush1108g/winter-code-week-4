@@ -3,16 +3,18 @@
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   position: relative;
+  z-index: 10;
 }
 
 #catagories ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-gap: 5rem;
+  justify-items: center;
+  align-items: center;
 }
 
 #catagories li {
@@ -37,6 +39,12 @@
 #categoryMain {
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; */
+  /* width: 13%; */
+  /* min-width: fit-content; */
   padding: 10px 0 10px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }

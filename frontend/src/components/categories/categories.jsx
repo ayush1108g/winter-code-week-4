@@ -13,7 +13,6 @@ export default function Categories(props) {
                 {/* {location.pathname === '/' && <img src={props.image} alt={props.alt} />} */}
                 <h5>{props.title}</h5>
             </li>
-
         </div>
     )
 }

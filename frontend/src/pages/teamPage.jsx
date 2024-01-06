@@ -36,8 +36,8 @@ const TeamPage = () => {
     }
 
     return (
-        <div>
-            <div style={{ width: '100vw', height: '5vh' }}></div>
+        <div id="teampage">
+            <div style={{ width: '100%', height: '5vh' }}></div>
             <div className="h2 d-flex justify-content-center">Our Team</div>
             <br /> <br />
             <div className="d-flex flex-row justify-content-around align-item-center">
@@ -51,7 +51,7 @@ const TeamPage = () => {
                         style={{ height: "25vw", width: "20vw" }}
                     />
                     <div className="h3 d-flex justify-content-center">Ayush Gupta</div>
-                    <div className="h3 d-flex justify-content-center" style={{ color: 'yellow' }}>
+                    <div className="h3 d-flex justify-content-center" style={{ color: 'grey' }}>
                         Frontend Developer
                     </div>
                     <div className="h3 d-flex flex-row justify-content-center" style={{ gap: '2vw' }}>
@@ -72,7 +72,7 @@ const TeamPage = () => {
                         style={{ height: "25vw", width: "20vw" }}
                     />
                     <div className="h3 d-flex justify-content-center">Pushkar Gupta</div>
-                    <div className="h3 d-flex justify-content-center" style={{ color: 'yellow' }}>Backend Developer</div>
+                    <div className="h3 d-flex justify-content-center" style={{ color: 'grey' }}>Backend Developer</div>
                     <div className="h3 d-flex flex-row justify-content-center" style={{ gap: '2vw' }}>
                         <a href={data.pushkar.linkedin} target="_blank" rel="noreferrer" > <CiLinkedin style={{ fontSize: '3vh' }} /></a>
                         <a href={data.pushkar.instagram} target="_blank" rel="noreferrer"><FaInstagram style={{ fontSize: '3vh' }} /></a>
@@ -91,7 +91,7 @@ const TeamPage = () => {
                         style={{ height: "25vw", width: "20vw" }}
                     />
                     <div className="h3 d-flex justify-content-center">Divya Kumar</div>
-                    <div className="h3 d-flex justify-content-center" style={{ color: 'yellow' }}>Frontend Developer</div>
+                    <div className="h3 d-flex justify-content-center" style={{ color: 'grey' }}>Frontend Developer</div>
                     <div className="h3 d-flex flex-row justify-content-center" style={{ gap: '2vw' }}>
                         <a href={data.divya.linkedin} target="_blank" rel="noreferrer" > <CiLinkedin style={{ fontSize: '3vh' }} /></a>
                         <a href={data.divya.instagram} target="_blank" rel="noreferrer"><FaInstagram style={{ fontSize: '3vh' }} /></a>

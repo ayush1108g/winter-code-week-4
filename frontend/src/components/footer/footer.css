@@ -1,4 +1,3 @@
-
 .footer-nav .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -55,12 +54,12 @@ footer {
   padding-left: 5px;
 }
 
-a {
+.footerNavLink {
   text-decoration: none;
   color: #646060;
   list-style: none;
 }
-a:hover {
+.footerNavLink:hover {
   text-decoration: none;
   color: rgb(250, 64, 95);
   list-style: none;

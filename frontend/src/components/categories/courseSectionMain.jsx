@@ -1,9 +1,9 @@
 import React from 'react'
 
-const courseSectionMain = React.forwardRef((props, ref) => {
+const courseSectionMain = (props, ref) => {
     return (
-        <div ref={ref}>courseSectionMain</div>
+        <div id={props.id}>courseSectionMain</div>
     )
-});
+};
 
 export default courseSectionMain;

@@ -1,18 +1,13 @@
 import Categories from "./categories";
 import CourseSectionMain from "./courseSectionMain";
-import { useRef } from "react";
+import { scrollToHandler } from "../../store/scrollTo";
 export default function CategoriesMain() {
-    const JEE = useRef(null);
-
-    const scrollintoView = (ref) => {
-        ref.current.scrollIntoView({ behavior: "smooth" });
-    }
 
     return (
-        <>
+        <div>
             <section id="catagories">
                 <ul>
-                    <Categories title="JEE" onClick={() => { scrollintoView(JEE) }}></Categories>
+                    <Categories title="JEE" onClick={(e) => { scrollToHandler(console.log(e)) }}></Categories>
                     <Categories title="NEET"></Categories>
                     <Categories title="NCERT"></Categories>
                     <Categories title="UPSC"></Categories>
@@ -24,9 +19,9 @@ export default function CategoriesMain() {
 
             </section>
             <section>
-                <CourseSectionMain ref={JEE} title="JEE" />
+                <CourseSectionMain id='JEE' title="JEE" />
                 <CourseSectionMain title="NEET" />
             </section>
-        </>
+        </div>
     );
 }

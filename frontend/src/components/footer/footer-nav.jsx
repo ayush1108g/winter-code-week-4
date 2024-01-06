@@ -1,112 +1,112 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./footer.css";
 
-export default function(){
-    return(<div class="footer-nav">
-    <div class="container">
-      <ul class="footer-nav-list">
-        <li class="footer-nav-item">
-          <h2 class="nav-title">Our Centers</h2>
+export default function A() {
+  return (<div className="footer-nav">
+    <div className="container">
+      <ul className="footer-nav-list">
+        <li className="footer-nav-item">
+          <h2 className="nav-title">Our Centers</h2>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Kota</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Kota</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Delhi</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Delhi</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Banglore</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Banglore</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Hydrabad</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Hydrabad</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Kolkata</a>
-        </li>
-      </ul>
-      <ul class="footer-nav-list">
-        <li class="footer-nav-item">
-          <h2 class="nav-title">Popular Exams</h2>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">IIT JEE</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">UPSC</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">NEET</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">NDA</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">GATE</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Kolkata</li>
         </li>
       </ul>
-      <ul class="footer-nav-list">
-        <li class="footer-nav-item">
-          <h2 class="nav-title">Our Company</h2>
+      <ul className="footer-nav-list">
+        <li className="footer-nav-item">
+          <h2 className="nav-title">Popular Exams</h2>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Career</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">IIT JEE</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Update</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">UPSC</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Terms and conditions</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">NEET</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">About us</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">NDA</li>
         </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Blogs</a>
-        </li>
-      </ul>
-      <ul class="footer-nav-list">
-        <li class="footer-nav-item">
-          <h2 class="nav-title">Services</h2>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Prices drop</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">New Courses</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Best Courses</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Contact us</a>
-        </li>
-        <li class="footer-nav-item">
-          <a href="#" class="footer-nav-link">Best Reuslt</a>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">GATE</li>
         </li>
       </ul>
-      <ul class="footer-nav-list">
-        <li class="footer-nav-item">
-          <h2 class="nav-title">Contact</h2>
+      <ul className="footer-nav-list">
+        <li className="footer-nav-item">
+          <h2 className="nav-title">Our Company</h2>
         </li>
-        <li class="footer-nav-item flex">
-          <div class="icon-box">
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Career</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Update</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Terms and conditions</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">About us</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Blogs</li>
+        </li>
+      </ul>
+      <ul className="footer-nav-list">
+        <li className="footer-nav-item">
+          <h2 className="nav-title">Services</h2>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Prices drop</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">New Courses</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Best Courses</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Contact us</li>
+        </li>
+        <li className="footer-nav-item">
+          <li className="footerNavLink">Best Reuslt</li>
+        </li>
+      </ul>
+      <ul className="footer-nav-list">
+        <li className="footer-nav-item">
+          <h2 className="nav-title">Contact</h2>
+        </li>
+        <li className="footer-nav-item flex">
+          <div className="icon-box">
             <ion-icon name="location-outline"></ion-icon>
           </div>
-          <address class="content">
+          <address className="content">
             561 HAL Old Airport Rd, Murugeshpalya, Bengaluru, Karnataka 560017
           </address>
         </li>
-        <li class="footer-nav-item flex">
-          <div class="icon-box">
+        <li className="footer-nav-item flex">
+          <div className="icon-box">
             <ion-icon name="call-outline"></ion-icon>
           </div>
-          <a href="tel:8446590015" class="footer-nav-link">8446590015</a>
+          <li href="tel:8446590015" className="footerNavLink">8446590015</li>
         </li>
-        <li class="footer-nav-item flex">
-          <div class="icon-box">
+        <li className="footer-nav-item flex">
+          <div className="icon-box">
             <ion-icon name="mail-outline"></ion-icon>
           </div>
-          <a href="mailto:divyakumar768800@gmail.com" class="footer-nav-link">divyakumar768800@gmail.com</a>
+          <li href="mailto:divyakumar768800@gmail.com" className="footerNavLink">divyakumar768800@gmail.com</li>
         </li>
       </ul>
     </div>

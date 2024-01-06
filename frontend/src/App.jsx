@@ -1,7 +1,6 @@
 // import classes from "./App.module.css";
 // import CourseDetail from "./components/course-detail";
 import Card from "./components/Card.jsx";
-import classes from "./App.module.css";
 import CourseDetail from "./components/course-detail/course-detail.jsx";
 import Footer from "./components/footer/mainFooter.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -64,24 +63,21 @@ function MainComp() {
   };
   return (
     <>
-      <div onClick={closeSidebarHandler} >
+      <div onClick={closeSidebarHandler}  >
         <div
           className="h2 d-flex align-item-center justify-content-center"
-          style={{
-            backgroundColor: "#f6f6f6",
-            marginBottom: "0px",
-            padding: "0px",
-          }}
+        // style={{
+        //   backgroundColor: "#f6f6f6",
+        //   marginBottom: "0px",
+        //   padding: "0px",
+        // }}
         >
           Edu-Tech
         </div>
         <Navbar />
-        <div
-        // style={{ width: "100vw", height: "100vh" }}
-        >
+        <div>
           {location.pathname === "/" &&
             <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', overflowX: 'clip' }} />}
-
         </div>
         <SignupPage/>
         <RoutesWithAnimation />
@@ -95,11 +91,11 @@ function App() {
     <HashRouter>
       <SidebarContextProvider>
         <MainComp />
-        <CategoriesMain />
+
         {/* <iframe title="abc" width="560" height="315" src="https://www.youtube.com/embed/ywLoEQ6Ta8A" frameborder="0" allowfullscreen></iframe> */}
+        <Footer></Footer>
       </SidebarContextProvider>
-      <Card></Card>
-      <Footer></Footer>
+      {/* <Card></Card> */}
     </HashRouter>
   );
 }
