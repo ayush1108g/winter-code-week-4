@@ -19,7 +19,7 @@ import ForgotPassPage from "./pages/ForgotPass/ForgotPassPage";
 import ForgotPassIDPage from "./pages/ForgotPass/ForgotPassIDPage";
 import ForgotPassConfirmPage from "./pages/ForgotPass/ForgotPassConfirmPage";
 import IMAGE1 from "./store/IMAGE1.jpg";
-
+import SignUpForm from './components/signup1'
 export const ToLink = "https://ecommerce-web-lwxy.onrender.com";
 // export const ToLink = "http://127.0.0.1:8000";
 export const FromLink = "https://swiftshop-ecommerce.netlify.app/#/";
