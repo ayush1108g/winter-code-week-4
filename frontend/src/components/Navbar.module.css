@@ -1,0 +1,8 @@
+.navbar {
+  background: "none";
+
+  position: sticky;
+  top: 0;
+  left: 50px;
+  z-index: 10;
+}
