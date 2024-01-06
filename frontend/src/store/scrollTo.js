@@ -1,8 +1,8 @@
-export const scrollToHandler = (id) => {
+export const scrollToHandler = (id, offset) => {
   const element = document.getElementById(id);
+  console.log("element", element);
   if (element) {
     // element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    const offset = 50;
     const topPos = element.offsetTop - offset;
     window.scrollTo({
       top: topPos,

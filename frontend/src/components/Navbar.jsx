@@ -18,11 +18,11 @@ const Navbar = () => {
   return (<>
     <nav className={classes.navbar}>
       <ul>
-        <li>Home</li>
-        <li>Courses</li>
-        <li>Contact us</li>
-        <li onClick={() => { scrollToHandler('teampage') }}>Our team</li>
-        <li>login</li>
+        <li onClick={() => { scrollToHandler('toppage', 0) }}>Home</li>
+        <li onClick={() => { scrollToHandler("catagories", 100) }}>Courses</li>
+        <li onClick={() => { scrollToHandler("contact-us", 100) }}>Contact us</li>
+        <li onClick={() => { scrollToHandler('teampage', 50) }}>Our team</li>
+        <li onClick={() => { scrollToHandler('login', 100) }}>login</li>
       </ul>
     </nav>
   </>
