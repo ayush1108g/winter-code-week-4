@@ -1,6 +1,9 @@
 // import classes from "./App.module.css";
-import CourseDetail from "./components/course-detail";
+// import CourseDetail from "./components/course-detail";
 
+import classes from "./App.module.css";
+import CourseDetail from "./components/course-detail/course-detail.jsx";
+import Footer from "./components/footer/mainFooter.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Route, Routes, useLocation, HashRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -21,6 +24,7 @@ import ForgotPassConfirmPage from "./pages/ForgotPass/ForgotPassConfirmPage";
 import IMAGE1 from "./store/IMAGE1.jpg";
 import CategoriesMain from "./components/categories/categoriesMain";
 
+import SignUpForm from './components/signup1'
 export const ToLink = "https://ecommerce-web-lwxy.onrender.com";
 // export const ToLink = "http://127.0.0.1:8000";
 export const FromLink = "https://swiftshop-ecommerce.netlify.app/#/";
@@ -93,6 +97,7 @@ function App() {
         <CategoriesMain />
         {/* <iframe title="abc" width="560" height="315" src="https://www.youtube.com/embed/ywLoEQ6Ta8A" frameborder="0" allowfullscreen></iframe> */}
       </SidebarContextProvider>
+      <Footer></Footer>
     </HashRouter>
   );
 }
