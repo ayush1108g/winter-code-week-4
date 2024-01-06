@@ -1,4 +1,4 @@
-import classes from "./App.module.css";
+// import classes from "./App.module.css";
 import CourseDetail from "./components/course-detail";
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -19,6 +19,7 @@ import ForgotPassPage from "./pages/ForgotPass/ForgotPassPage";
 import ForgotPassIDPage from "./pages/ForgotPass/ForgotPassIDPage";
 import ForgotPassConfirmPage from "./pages/ForgotPass/ForgotPassConfirmPage";
 import IMAGE1 from "./store/IMAGE1.jpg";
+import CategoriesMain from "./components/categories/categoriesMain";
 
 export const ToLink = "https://ecommerce-web-lwxy.onrender.com";
 // export const ToLink = "http://127.0.0.1:8000";
@@ -50,52 +51,6 @@ function RoutesWithAnimation() {
   );
 }
 
-// function App() {
-//   const screenWidth = window.innerWidth;
-//   return (
-//     <HashRouter>
-//       <div>
-//         <div
-//           className="d-none d-lg-block"
-//           style={{
-//             position: "fixed",
-//             width: "18rem",
-//             backgroundColor: "black",
-//           }}
-//         >
-//           {/* <SideBar /> */}
-          
-//         </div>
-//         <div
-//           className={`h1 d-flex justify-content-center ${classes.gradient}`}
-//           style={{
-//             width: "100vw",
-//             height: "auto",
-//             padding: "10px",
-//             zIndex: 10,
-//           }}
-//         >
-//           {" "}
-//           EduShop
-//         </div>
-//         <div className="navbar-expand-lg d-lg-none">
-//           <Navbar />
-//         </div>
-//         <div
-//           className=""
-//           style={{
-//             marginLeft: screenWidth > 992 ? "24rem" : "2rem",
-//             height: "100dvh",
-//             overflowY: "auto",
-//           }}
-//         >
-//           <RoutesWithAnimation />
-//           <div style={{ width:"100%", height: "15vh" }}></div>
-//         </div>
-//       </div>
-//       <CourseDetail></CourseDetail>
-//     </HashRouter>
-    
 function MainComp() {
   const sidebarCtx = useContext(SidebarContext);
   const location = useLocation();
@@ -105,17 +60,12 @@ function MainComp() {
   };
   return (
     <>
-      <div
-        onClick={closeSidebarHandler}
-      // style={{ width: "100vw", height: "100vh" }}
-      >
+      <div onClick={closeSidebarHandler} >
         <div
-          className="d-flex align-item-center justify-content-center"
+          className="h2 d-flex align-item-center justify-content-center"
           style={{
             backgroundColor: "#f6f6f6",
             marginBottom: "0px",
-            flexDirection: ' column',
-
             padding: "0px",
           }}
         >
@@ -129,8 +79,8 @@ function MainComp() {
             <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', overflowX: 'clip' }} />}
 
         </div>
+        <RoutesWithAnimation />
       </div>
-      <RoutesWithAnimation />
     </>
   );
 }
@@ -140,7 +90,8 @@ function App() {
     <HashRouter>
       <SidebarContextProvider>
         <MainComp />
-        <iframe title="abc" width="560" height="315" src="https://www.youtube.com/embed/ywLoEQ6Ta8A" frameborder="0" allowfullscreen></iframe>
+        <CategoriesMain />
+        {/* <iframe title="abc" width="560" height="315" src="https://www.youtube.com/embed/ywLoEQ6Ta8A" frameborder="0" allowfullscreen></iframe> */}
       </SidebarContextProvider>
     </HashRouter>
   );
