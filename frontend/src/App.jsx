@@ -4,11 +4,11 @@ import Card from "./components/Card.jsx";
 import CourseDetail from "./components/course-detail/course-detail.jsx";
 import Footer from "./components/footer/mainFooter.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Route, Routes, useLocation, HashRouter} from "react-router-dom";
+import { Route, Routes, useLocation, HashRouter } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 // import SideBar from "./components/SideBar";
-import { useContext ,useState} from "react";
+import { useContext, useState } from "react";
 import SidebarContext from "./store/sidebar-context";
 
 import SidebarContextProvider from "./store/sidebarContextProvider";
@@ -30,13 +30,13 @@ export const FromLink = "https://swiftshop-ecommerce.netlify.app/#/";
 
 function RoutesWithAnimation() {
   const location = useLocation();
-  
+
   console.log(location);
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.key}>
         {/* <Route path="/login" element={<LoginPage />} /> */}
-        <Route path="/login/forgotpassword" element={<ForgotPassPage />} />
+        <Route path="/forgotpassword" element={<ForgotPassPage />} />
         <Route
           path="/login/forgotpassword/:id"
           element={<ForgotPassIDPage />}
@@ -56,7 +56,7 @@ function RoutesWithAnimation() {
 }
 
 function MainComp() {
-  
+
   const sidebarCtx = useContext(SidebarContext);
   const location = useLocation();
   const closeSidebarHandler = () => {
@@ -81,10 +81,10 @@ function MainComp() {
         // style={{ width: "100vw", height: "100vh" }}
         >
           {/* {location.pathname === "/"&& */}
-            <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', overflowX: 'clip' }} />
+          <img src={IMAGE1} alt="IMAGE1" className="img-fluid" style={{ width: '100%', overflowX: 'clip' }} />
 
         </div>
-        <SignupPage/>
+        <SignupPage />
         <RoutesWithAnimation />
       </div>
     </>
