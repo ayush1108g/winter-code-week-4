@@ -4,7 +4,7 @@ import "./footer.css";
 export default function A() {
   return (<div className="footer-nav">
     <div className="container">
-      <ul className="footer-nav-list">
+      <ul id="footer-nav-list1" className="footer-nav-list">
         <li className="footer-nav-item">
           <h2 className="nav-title">Our Centers</h2>
         </li>
@@ -24,7 +24,7 @@ export default function A() {
           <li className="footerNavLink">Kolkata</li>
         </li>
       </ul>
-      <ul className="footer-nav-list">
+      <ul id="footer-nav-list2" className="footer-nav-list">
         <li className="footer-nav-item">
           <h2 className="nav-title">Popular Exams</h2>
         </li>
@@ -44,7 +44,7 @@ export default function A() {
           <li className="footerNavLink">GATE</li>
         </li>
       </ul>
-      <ul className="footer-nav-list">
+      <ul id="footer-nav-list3" className="footer-nav-list">
         <li className="footer-nav-item">
           <h2 className="nav-title">Our Company</h2>
         </li>
@@ -64,7 +64,7 @@ export default function A() {
           <li className="footerNavLink">Blogs</li>
         </li>
       </ul>
-      <ul className="footer-nav-list">
+      <ul id="footer-nav-list4" className="footer-nav-list">
         <li className="footer-nav-item">
           <h2 className="nav-title">Services</h2>
         </li>
@@ -84,7 +84,7 @@ export default function A() {
           <li className="footerNavLink">Best Reuslt</li>
         </li>
       </ul>
-      <ul className="footer-nav-list">
+      <ul id="footer-nav-list5" className="footer-nav-list">
         <li className="footer-nav-item">
           <h2 className="nav-title">Contact</h2>
         </li>
