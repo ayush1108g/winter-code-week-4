@@ -1,29 +1,73 @@
-import Button from "../UI/Button";
-import { useNavigate } from "react-router";
-export default function SideBar() {
-  const navigate = useNavigate();
+import styles from './sidebar.module.css';
+import SidebarContext from "../store/sidebar-context";
+import { useContext } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+const Sidebar = () => {
+    const navigate = useNavigate();
+    const sidebarCtx = useContext(SidebarContext);
+    const isLoggedIn = localStorage.getItem("isLoggedIn") || false;
+    const animateVariants = {
+        show: {
+            x: [-250, 0],
+            transition: {
+                times: [0, 1],
+                ease: "easeInOut",
+                duration: 0.5,
+            },
+            exit: {
+                x: [0, -250],
+                transition: {
+                    times: [0, 1],
+                    ease: "easeInOut",
+                    duration: 0.5,
+                },
+            },
+        },
+    };
+    const logoutHandler = () => {
+        localStorage.clear();
+        window.location.reload();
+    };
+    const cartHandler = () => {
+        const userid = localStorage.getItem("id");
+        if (userid === null || userid === undefined || userid === '')
+            return;
+        navigate(`/${userid}/cart`);
+    };
+    const xyzHandler = () => {
+        const userid = localStorage.getItem("id");
+        if (userid === null || userid === undefined || userid === '')
+            return;
+        if (isLoggedIn) {
+            navigate(`/${userid}/updatedetail`);
+        } else {
+            navigate('/signin');
+        }
+    };
+    const contactUsHandler = () => {
+        navigate('/contactUs');
+    }
+    return (
+        <AnimatePresence>
+            <motion.div
+                variants={animateVariants}
+                animate="show"
+                exit="exit"
+                onClick={(e) => { e.stopPropagation() }}
+                className={`${styles.sidebar} ${sidebarCtx.isSidebarOpen ? styles.open : ''}`}>
+                <ul style={{ listStyle: 'none' }}>
+                    <li className={styles.li}><Link to="/team">Our Team</Link></li>
+                    <li className={styles.li} onClick={xyzHandler}>{isLoggedIn === '1' ? 'Update Detail' : 'Login/Signup'}</li>
+                    <li className={styles.li} onClick={cartHandler}>Cart</li>
+                    <li className={styles.li} onClick={contactUsHandler}>Contact Us</li>
+                    <li className={styles.li} onClick={logoutHandler}>Logout</li>
+                    <li className={styles.li} onClick={() => { sidebarCtx.toggleSidebar() }}>Close</li>
+                </ul>
+            </motion.div>
+        </AnimatePresence >
+    );
+};
 
-
-  const logoutHandler = () => {
-    localStorage.clear();
-    navigate('/login');
-  }
-  return (
-    <aside className="px-3.5 py-3 bg-stone-800 text-stone-50 md:w-72 rounded-r-xl" style={{ height: '100dvh', overflowY: 'auto' }}>
-      {/* <h2 className="mb-8 font-bold uppercase md:text-xl text-stone-200">Your Projects</h2> */}
-      <div>
-        <ul>
-          <li><Button onClick={() => { navigate('/') }}>Home page</Button></li>
-          <li><Button onClick={() => { navigate('/patientRegistration') }}>Patient Registration</Button></li>
-          <li><Button onClick={() => { navigate('/patientList') }}>Patient List</Button></li>
-          <li><Button onClick={() => { navigate('/hospitalRoomStatus') }}>Hospital Room Status</Button></li>
-          <li><Button onClick={() => { navigate('/payment') }}>Payment</Button></li>
-          <li><Button onClick={() => { navigate('/employeeRegistration') }}> Employee Registration</Button></li>
-          <li><Button onClick={() => { navigate('/employeeList') }}> Employee List </Button></li>
-          <li><Button onClick={() => { navigate('/team') }}>Team</Button></li>
-          <li><Button onClick={logoutHandler}>LOGOUT</Button></li>
-        </ul>
-      </div>
-    </aside>
-  );
-}
+export default Sidebar;
