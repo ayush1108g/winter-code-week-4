@@ -1,6 +1,4 @@
-/* #footer {
-  z-index: 50;
-} */
+
 .footer-nav .container {
   display: -webkit-box;
   display: -webkit-flex;
@@ -129,12 +127,4 @@ address {
 
 .footer-nav-list {
   list-style: none;
-}
-.fa-instagram {
-  margin-left: 8%;
-}
-.fa {
-  margin-top: 1%;
-  margin-right: 1.5%;
-  font-size: 25px;
 }

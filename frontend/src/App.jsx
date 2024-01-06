@@ -1,6 +1,6 @@
 // import classes from "./App.module.css";
 // import CourseDetail from "./components/course-detail";
-
+import Card from "./components/Card.jsx";
 import classes from "./App.module.css";
 import CourseDetail from "./components/course-detail/course-detail.jsx";
 import Footer from "./components/footer/mainFooter.jsx";
@@ -97,6 +97,7 @@ function App() {
         <CategoriesMain />
         {/* <iframe title="abc" width="560" height="315" src="https://www.youtube.com/embed/ywLoEQ6Ta8A" frameborder="0" allowfullscreen></iframe> */}
       </SidebarContextProvider>
+      <Card></Card>
       <Footer></Footer>
     </HashRouter>
   );
