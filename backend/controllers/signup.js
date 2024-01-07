@@ -16,7 +16,7 @@ exports.signup = async (req, res) => {
       },
     });
   } catch (err) {
-    console.log(err);
+    //console.log(err);
     res.status(404).json({
       status: "fail",
       message: err.message,
@@ -32,7 +32,7 @@ exports.login = catchasync(async (req, res, next) => {
     });
   }
   const user = await usersignup.findOne({ emailid }).select("+password");
-  console.log(user);
+  //console.log(user);
   if (!user || !(await user.correctPassword(password, user.password))) {
     res.status(401).json({
       status: "fail",
@@ -54,10 +54,10 @@ exports.forgotPassword = catchasync(async (req, res, next) => {
     return res.status(404).json({ masg: "no such user with this email id" });
 
   const resetToken = await user.createpasswordresetpassword();
-  console.log(resetToken);
+  //console.log(resetToken);
   await user.save();
   const code = resetToken;
-  console.log(code);
+  //console.log(code);
   const message = `Your verification code is \n ${resetToken}\n you didn't forget your password, please ignore this email!`;
   try {
     await email({
@@ -75,13 +75,13 @@ exports.forgotPassword = catchasync(async (req, res, next) => {
     user.passwordResetToken = undefined;
     user.passwordResetExpires = undefined;
     await user.save({ validateBeforeSave: false });
-    console.log(err);
+    //console.log(err);
     massage: "reset link invalid";
   }
 });
 exports.verifycode = async (req, res, next) => {
   const hashtoken = req.body.code;
-  console.log(hashtoken);
+  //console.log(hashtoken);
   const user = await usersignup.findOne({
     resetPasswordToken: hashtoken,
     passwordresetexpired: { $gt: Date.now() },
@@ -99,7 +99,7 @@ exports.verifycode = async (req, res, next) => {
 };
 exports.resetPassword = async (req, res, next) => {
   const hashtoken = req.params.token;
-  console.log(hashtoken);
+  //console.log(hashtoken);
   const user = await usersignup.findOne({
     resetPasswordToken: hashtoken,
     passwordresetexpired: { $gt: Date.now() },
@@ -122,10 +122,10 @@ exports.resetPassword = async (req, res, next) => {
 
 exports.getuserbyid = async (req, res) => {
   const id = req.params.id;
-  console.log(id);
+  //console.log(id);
   try {
     let user = await usersignup.findById(id);
-    console.log(user);
+    //console.log(user);
     const userData = {
       name: user.name,
       emailid: user.emailid,
@@ -145,7 +145,7 @@ exports.getuserbyid = async (req, res) => {
 };
 
 exports.updateuser = async (req, res) => {
-  // console.log(req.params.id, req.body);
+  // //console.log(req.params.id, req.body);
   try {
     const user = await usersignup.findByIdAndUpdate(req.params.id, req.body, {
       new: true,
@@ -157,7 +157,7 @@ exports.updateuser = async (req, res) => {
       phoneno: user.phoneno,
       address: user.address,
     };
-    // console.log(data, req.body);
+    // //console.log(data, req.body);
     res.status(201).json({
       status: "success",
       data: userData,
@@ -172,10 +172,10 @@ exports.updateuser = async (req, res) => {
 
 exports.updatepass = async (req, res) => {
   const id = req.params.id;
-  // console.log(id, req.body);
+  // //console.log(id, req.body);
   const user = await usersignup.findById(id);
   const x = await user.correctPassword(req.body.oldpassword, user.password);
-  // console.log(x);
+  // //console.log(x);
   try {
     if (!user || !x) {
       res.status(401).json({

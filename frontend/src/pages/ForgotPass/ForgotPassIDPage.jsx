@@ -82,7 +82,6 @@ const ForgotPassIDPage = () => {
             {!isLoading && <p className={classes.loading}> {errormsg}</p>}
             {isLoading && (
               <div className="spinner-border text-danger" role="status">
-                {/* <span className="sr-only">Loading...</span> */}
               </div>
             )}
             <motion.div

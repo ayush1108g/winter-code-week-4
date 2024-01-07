@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/ayush1108g/winter-code-week-4",
   "name": "frontend",
   "version": "1.0.0",
   "private": true,
@@ -54,6 +55,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1"
   }

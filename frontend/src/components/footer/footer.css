@@ -32,10 +32,7 @@
 
 footer {
   padding-top: 50px;
-/* margin-top: 1%; */
-/* border-color: aliceblue; */
-/* border-width:  solid; */
-border-top: #888686 solid;
+  border-top: #888686 solid;
 }
 
 .footer-category {
@@ -148,7 +145,7 @@ address {
 }
 
 @media screen and (max-width: 900px) {
-  .footer-nav  {
+  .footer-nav {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -webkit-flex-direction: column;

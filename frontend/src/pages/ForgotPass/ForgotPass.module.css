@@ -1,6 +1,5 @@
 .full {
   width: 100vw;
-  /* height: 150vh; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,8 +14,6 @@
   position: relative;
   align-content: center;
   width: max-content;
-  /* margin: 2.5rem 0rem -10.5rem 0rem;
-  margin-left: 20vw; */
 }
 .signin {
   cursor: pointer;

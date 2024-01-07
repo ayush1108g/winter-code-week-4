@@ -10,10 +10,8 @@ const CourseSectionMain = (props) => {
     const navigate = useNavigate();
     const [playlist, setPlaylist] = useState(null);
     const auth = useSelector(state => state.auth.isAuthenticated);
-    // console.log(process.env);
 
     useEffect(() => {
-        console.log(process.env.REACT_APP_YT_API_KEY_1)
         const link = "https://www.googleapis.com/youtube/v3/playlists";
         const params = {
             part: "snippet",
@@ -23,10 +21,9 @@ const CourseSectionMain = (props) => {
         const send = async () => {
             try {
                 const response = await axios.get(link, { params: params });
-                console.log(response.data.items[0]);
                 setPlaylist(response.data.items[0]);
             } catch (error) {
-                console.log(error);
+                //console.log(error);
             }
         }
         send();

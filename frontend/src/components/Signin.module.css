@@ -1,4 +1,4 @@
-.container{
+.container {
   background-color: rgb(66, 74, 81);
 }
 .form {
@@ -12,18 +12,13 @@
   padding: 20px;
   width: 35vw;
   background-color: rgb(157, 189, 208);
-  /* padding: 1rem; */
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25); */
-  /* border-image: linear-gradient(to right, #3498db, #57cfda) ; */
 }
 .form h3 {
   text-align: center;
   font-size: 2rem;
   margin-top: -1.3cm;
 }
-.form input {
-  /* overflow: scroll; */
-}
+
 .buttons {
   display: flex;
   padding: 10px;
@@ -36,14 +31,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* width: 100%; */
   height: auto;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0; /* Optional: You can adjust this to control spacing */
+  margin: 0;
 }
 
 .box {
@@ -52,12 +46,11 @@ input[type="number"]::-webkit-outer-spin-button {
   left: -100px;
   background-color: #d2c1d1;
   padding: 20px;
-  /* width: auto; */
   border-radius: 50%;
   scale: 300%;
   z-index: 1;
 }
-.signin{
+.signin {
   cursor: pointer;
 }
 @media screen and (max-width: 1800px) {

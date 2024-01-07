@@ -1,11 +1,14 @@
 import Categories from "./categories";
 import CourseSectionMain from "./courseSectionMain";
-// import { scrollToHandler } from "../../store/scrollTo";
+import { useSelector } from "react-redux";
 export default function CategoriesMain() {
+    const isAuth = useSelector(state => state.auth.isAuthenticated);
 
     return (
         <div>
-            <section id="catagories">
+            <section id="catagories"
+                style={{ backgroundImage: isAuth ? 'linear-gradient(to bottom, #09161f, #2470a2,#ffff)' : '' }}
+            >
                 <ul>
                     <Categories title="JEE"></Categories>
                     <Categories title="NEET"></Categories>
@@ -23,15 +26,6 @@ export default function CategoriesMain() {
                 <CourseSectionMain id='WEB-DEV' title="WEB-DEV" playlistid="PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc" />
                 <CourseSectionMain id='GAME-DEV' title="GAME-DEV" playlistid="PLdOT12odxrUrUExBUuM5KoN0fAnOdzH1L" />
             </section>
-            {/* <iframe
-                title="123"
-                width="1000"
-                height="500"
-                src="https://www.youtube.com/embed/videoseries?list=PLxyGaR3hEy3j2EpdM6bvkA2Q87ey5j0sU"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            ></iframe> */}
 
         </div>
     );

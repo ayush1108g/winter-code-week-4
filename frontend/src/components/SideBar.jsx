@@ -1,12 +1,11 @@
 import styles from './sidebar.module.css';
-import SidebarContext from "../store/sidebar-context";
+import SidebarContext from "../store/context/sidebar-context";
 import { useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Link } from "react-router-dom";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { scrollToHandler } from '../store/scrollTo';
 import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "../store/auth";
+import { authActions } from "../store/redux/auth";
 const Sidebar = () => {
     const navigate = useNavigate();
     const location = useLocation();

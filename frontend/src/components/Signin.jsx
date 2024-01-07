@@ -1,18 +1,15 @@
 import classes from "./Signin.module.css";
 import axios from "axios";
-import { useNavigate } from "react-router";
 import { RiEyeFill, RiEyeOffFill } from "react-icons/ri";
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToLink } from "../App";
-import Modal from './../UI/Modal'
 import { scrollToHandler } from "../store/scrollTo";
 import { useDispatch } from "react-redux";
-import { authActions } from "../store/auth";
+import { authActions } from "../store/redux/auth";
 
 const Signin = (props) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [errormsg, setErrormsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -59,11 +56,9 @@ const Signin = (props) => {
     } else {
     }
     const page = loginstate.toLowerCase();
-    console.log(data);
     try {
       setIsLoading(true);
       let resp;
-      console.log(`${ToLink}/user/${page}`);
       resp = await axios.post(`${ToLink}/user/${page}`, data, {
         timeout: 30000,
       });
@@ -92,9 +87,9 @@ const Signin = (props) => {
 
       }
     } catch (error) {
-      console.log(error);
-      if (error.response.data.code === 11000) setErrormsg('Email already in use');
-      else if (error.response.data.message) setErrormsg(error.response.data.message)
+      //console.log(error);
+      if (error && error.response && error.response.data && error.response.data.code && error.response.data.code === 11000) setErrormsg('Email already in use');
+      else if (error && error.response && error.response.data && error.response.data.message) setErrormsg(error.response.data.message)
       else if (error.code === "ERR_BAD_REQUEST") setErrormsg(error.message || "Email already in use");
       else if (error.code === "ERR_BAD_RESPONSE")
         setErrormsg("Server Not Responding...");
@@ -135,7 +130,6 @@ const Signin = (props) => {
         {!isLoading && <p className={classes.loading}> {errormsg}</p>}
         {isLoading && (
           <div className="spinner-border text-danger" role="status">
-            {/* <span className="sr-only">Loading...</span> */}
           </div>
         )}
         <motion.div
@@ -144,7 +138,6 @@ const Signin = (props) => {
           exit="exit"
           className={classes.box}
         ></motion.div>
-        {/* {props.pagename === "Signup" && ( */}
         <motion.div
           variants={animateVariants}
           animate="show"

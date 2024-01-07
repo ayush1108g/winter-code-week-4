@@ -48,7 +48,7 @@ signupmodel.methods.createpasswordresetpassword = function () {
   const resetToken = Math.floor(Math.random() * 100000) + 100000;
 
   this.resetPasswordToken = resetToken;
-  console.log({ resetToken }, this.resetPasswordToken);
+  //console.log({ resetToken }, this.resetPasswordToken);
 
   this.passwordresetexpired = Date.now() + 600000;
 
