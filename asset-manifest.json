@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ayush1108g/winter-code-week-4/static/css/main.5be235d9.css",
-    "main.js": "/ayush1108g/winter-code-week-4/static/js/main.d78bb5e1.js",
-    "static/js/787.9e9f4ffd.chunk.js": "/ayush1108g/winter-code-week-4/static/js/787.9e9f4ffd.chunk.js",
-    "static/media/IMAGE1.jpg": "/ayush1108g/winter-code-week-4/static/media/IMAGE1.7bd868d3a7fcbc37b1ad.jpg",
-    "static/media/AyushPhoto-removebg-color.png": "/ayush1108g/winter-code-week-4/static/media/AyushPhoto-removebg-color.b4f4ef2158fc0b2232ec.png",
-    "static/media/Divya-removebg-color.png": "/ayush1108g/winter-code-week-4/static/media/Divya-removebg-color.0f04251274ff1a02960d.png",
-    "static/media/Pushkar-removebg-color.png": "/ayush1108g/winter-code-week-4/static/media/Pushkar-removebg-color.ab4a6ff536bb6bc2321e.png",
-    "static/media/img1.avif": "/ayush1108g/winter-code-week-4/static/media/img1.cd1dfee1abb6165b3877.avif",
-    "static/media/Divya-removebg-bw.png": "/ayush1108g/winter-code-week-4/static/media/Divya-removebg-bw.af50fcf5938f2d098170.png",
-    "static/media/AyushPhoto-removebg-bw.png": "/ayush1108g/winter-code-week-4/static/media/AyushPhoto-removebg-bw.8a48d9c79f2bd864aa12.png",
-    "static/media/Pushkar-removebg-bw.png": "/ayush1108g/winter-code-week-4/static/media/Pushkar-removebg-bw.6e9096ca998f75450a2e.png",
-    "index.html": "/ayush1108g/winter-code-week-4/index.html",
-    "main.5be235d9.css.map": "/ayush1108g/winter-code-week-4/static/css/main.5be235d9.css.map",
-    "main.d78bb5e1.js.map": "/ayush1108g/winter-code-week-4/static/js/main.d78bb5e1.js.map",
-    "787.9e9f4ffd.chunk.js.map": "/ayush1108g/winter-code-week-4/static/js/787.9e9f4ffd.chunk.js.map"
+    "main.css": "/winter-code-week-4/static/css/main.5be235d9.css",
+    "main.js": "/winter-code-week-4/static/js/main.33a3c29c.js",
+    "static/js/787.9e9f4ffd.chunk.js": "/winter-code-week-4/static/js/787.9e9f4ffd.chunk.js",
+    "static/media/IMAGE1.jpg": "/winter-code-week-4/static/media/IMAGE1.7bd868d3a7fcbc37b1ad.jpg",
+    "static/media/AyushPhoto-removebg-color.png": "/winter-code-week-4/static/media/AyushPhoto-removebg-color.b4f4ef2158fc0b2232ec.png",
+    "static/media/Divya-removebg-color.png": "/winter-code-week-4/static/media/Divya-removebg-color.0f04251274ff1a02960d.png",
+    "static/media/Pushkar-removebg-color.png": "/winter-code-week-4/static/media/Pushkar-removebg-color.ab4a6ff536bb6bc2321e.png",
+    "static/media/img1.avif": "/winter-code-week-4/static/media/img1.cd1dfee1abb6165b3877.avif",
+    "static/media/Divya-removebg-bw.png": "/winter-code-week-4/static/media/Divya-removebg-bw.af50fcf5938f2d098170.png",
+    "static/media/AyushPhoto-removebg-bw.png": "/winter-code-week-4/static/media/AyushPhoto-removebg-bw.8a48d9c79f2bd864aa12.png",
+    "static/media/Pushkar-removebg-bw.png": "/winter-code-week-4/static/media/Pushkar-removebg-bw.6e9096ca998f75450a2e.png",
+    "index.html": "/winter-code-week-4/index.html",
+    "main.5be235d9.css.map": "/winter-code-week-4/static/css/main.5be235d9.css.map",
+    "main.33a3c29c.js.map": "/winter-code-week-4/static/js/main.33a3c29c.js.map",
+    "787.9e9f4ffd.chunk.js.map": "/winter-code-week-4/static/js/787.9e9f4ffd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5be235d9.css",
-    "static/js/main.d78bb5e1.js"
+    "static/js/main.33a3c29c.js"
   ]
 }
