@@ -6,6 +6,7 @@ import axios from "axios";
 import { ToLink } from "../../App";
 import { useNavigate } from "react-router-dom";
 import { Navigate } from "react-router";
+import { scrollToHandler } from "../../store/scrollTo";
 const ForgotPassIDPage = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errormsg, setErrormsg] = useState("");
@@ -18,7 +19,10 @@ const ForgotPassIDPage = () => {
   }
   const idw = id.split("-")[1];
   const loginpageHandler = () => {
-    navigate(-2);
+    navigate('/');
+    setTimeout(() => {
+      scrollToHandler('login', 100);
+    }, 100)
   };
 
   const proceedtoConfirmhandler = async (event) => {
@@ -39,7 +43,7 @@ const ForgotPassIDPage = () => {
       });
       if (resp.data.status === "success") {
         localStorage.setItem("Passcode2", "1");
-        navigate(`/login/forgotpassword/fpass987-${idw}-${body.code}/confirm`);
+        navigate(`/forgotpassword/fpass987-${idw}-${body.code}/confirm`);
       }
     } catch (error) {
       if (error.response.data.message) setErrormsg(error.response.data.message);
@@ -71,57 +75,59 @@ const ForgotPassIDPage = () => {
   };
   return (
     <>
-      <div className={`row d-flex align-items-center ${classes.container}`}>
-        {!isValid && <p className="h1 d-flex align-items-center justify-content-center">Not Authorised</p>}
-        {isValid === "1" && <motion.form className={`border-bottom-0 ${classes.form}`}>
-          {!isLoading && <p className={classes.loading}> {errormsg}</p>}
-          {isLoading && (
-            <div className="spinner-border text-danger" role="status">
-              {/* <span className="sr-only">Loading...</span> */}
+      <div className={classes.full}>
+        <div className={`row d-flex align-items-center ${classes.container}`}>
+          {!isValid && <p className="h1 d-flex align-items-center justify-content-center">Not Authorised</p>}
+          {isValid === "1" && <motion.form className={`border-bottom-0 ${classes.form}`}>
+            {!isLoading && <p className={classes.loading}> {errormsg}</p>}
+            {isLoading && (
+              <div className="spinner-border text-danger" role="status">
+                {/* <span className="sr-only">Loading...</span> */}
+              </div>
+            )}
+            <motion.div
+              variants={animateVariants}
+              animate="show"
+              exit="exit"
+              className={classes.box}
+            ></motion.div>
+            <p className="h2">Forgot Password</p>
+            <p>Password reset email sent to {idw}</p>
+            <div className="input-group mb-3">
+              <input
+                className="form-control"
+                type="text"
+                id="code"
+                autoComplete="on"
+                placeholder="Reset-Code"
+                ref={passwordref}
+                title="Please enter a code sent to your email address"
+                required
+              />
             </div>
-          )}
-          <motion.div
-            variants={animateVariants}
-            animate="show"
-            exit="exit"
-            className={classes.box}
-          ></motion.div>
-          <p className="h2">Forgot Password</p>
-          <p>Password reset email sent to {idw}</p>
-          <div className="input-group mb-3">
-            <input
-              className="form-control"
-              type="text"
-              id="code"
-              autoComplete="on"
-              placeholder="Reset-Code"
-              ref={passwordref}
-              title="Please enter a code sent to your email address"
-              required
-            />
-          </div>
 
-          <div className={classes.buttons}>
-            <button
-              className="btn btn-primary w-100"
-              type="submit"
-              onClick={proceedtoConfirmhandler}
-            >
-              Reset Password
-            </button>
-          </div>
-
-          <div className={classes.pagechange}>
-            <b>
-              <p
-                onClick={loginpageHandler}
-                className="small font-monospace text-center row text-dark "
+            <div className={classes.buttons}>
+              <button
+                className="btn btn-primary w-100"
+                type="submit"
+                onClick={proceedtoConfirmhandler}
               >
-                Back to Login?
-              </p>
-            </b>
-          </div>
-        </motion.form>}
+                Reset Password
+              </button>
+            </div>
+
+            <div className={classes.pagechange}>
+              <b>
+                <p
+                  onClick={loginpageHandler}
+                  className="small font-monospace text-center row text-dark "
+                >
+                  Back to Login?
+                </p>
+              </b>
+            </div>
+          </motion.form>}
+        </div>
       </div>
     </>
   );

@@ -6,6 +6,7 @@ const SidebarContextProvider = (props) => {
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+    console.log(!sidebarOpen);
   };
   const closeSidebar = () => {
     setSidebarOpen(false);

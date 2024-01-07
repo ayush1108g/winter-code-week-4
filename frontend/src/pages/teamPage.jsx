@@ -36,12 +36,17 @@ const TeamPage = () => {
     }
 
     return (
-        <div id="teampage" style={{marginBottom:"1cm"}}>
+        <div id="teampage" className="d-flex justify-content-center align-items-center flex-column " style={{ marginBottom: "1cm", maxWidth: '100%' }}>
             <div style={{ width: '100%', height: '5vh' }}></div>
             <div className="h2 d-flex justify-content-center">Our Team</div>
             <br /> <br />
-            <div className="d-flex flex-row justify-content-around align-item-center">
-                <div className="d-flex flex-column justify-content-center" style={{ gap: '1vw', border: '1px solid black', padding: '5px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)' }}>
+            <div style={{
+                display: 'flex',
+                justifyContent: 'center',
+                flexWrap: 'wrap',
+                gap: '20px',
+            }}>
+                <div className="d-flex flex-column justify-content-center align-items-center" style={{ gap: '1vw', border: '1px solid black', padding: '5px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)' }}>
                     <img
                         src={isHoveredAyush ? Ayush : AyushBW}
                         alt="Ayush"
@@ -62,7 +67,7 @@ const TeamPage = () => {
                     </div>
                 </div>
 
-                <div className="d-flex flex-column justify-content-center" style={{ gap: '1vw', border: '1px solid black', padding: '5px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)' }}>
+                <div className="d-flex flex-column justify-content-center align-items-center" style={{ gap: '1vw', border: '1px solid black', padding: '5px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)' }}>
                     <img
                         src={isHovered3 ? Pushkar : PushkarBW}
                         alt="Ayush"
@@ -81,7 +86,7 @@ const TeamPage = () => {
                     </div>
                 </div>
 
-                <div className="d-flex flex-column justify-content-center " style={{ gap: '1vw', border: '1px solid black', padding: '5px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)' }}>
+                <div className="d-flex flex-column justify-content-center align-items-center" style={{ gap: '1vw', border: '1px solid black', padding: '5px', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.5)', backdropFilter: 'blur(5px)' }}>
                     <img
                         src={isHovered2 ? Divya : DivyaBW}
                         alt="Divya"

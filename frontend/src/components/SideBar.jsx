@@ -3,17 +3,22 @@ import SidebarContext from "../store/sidebar-context";
 import { useContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { scrollToHandler } from '../store/scrollTo';
+import { useDispatch, useSelector } from "react-redux";
+import { authActions } from "../store/auth";
 const Sidebar = () => {
     const navigate = useNavigate();
+    const location = useLocation();
     const sidebarCtx = useContext(SidebarContext);
-    const isLoggedIn = localStorage.getItem("isLoggedIn") || false;
+    const isAuth = useSelector(state => state.auth.isAuthenticated);
+    const dispatch = useDispatch();
     const animateVariants = {
         show: {
-            x: [-250, 0],
+            x: [250, 0],
             transition: {
                 times: [0, 1],
-                ease: "easeInOut",
+                ease: "linear",
                 duration: 0.5,
             },
             exit: {
@@ -26,28 +31,20 @@ const Sidebar = () => {
             },
         },
     };
+
+    const scroll = (id, offset) => {
+        if (location.pathname !== '/') {
+            navigate('/');
+            setTimeout(() => {
+                scrollToHandler(id, offset);
+            }, 500)
+        } else {
+            scrollToHandler(id, offset);
+        }
+    }
     const logoutHandler = () => {
         localStorage.clear();
-        window.location.reload();
-    };
-    const cartHandler = () => {
-        const userid = localStorage.getItem("id");
-        if (userid === null || userid === undefined || userid === '')
-            return;
-        navigate(`/${userid}/cart`);
-    };
-    const xyzHandler = () => {
-        const userid = localStorage.getItem("id");
-        if (userid === null || userid === undefined || userid === '')
-            return;
-        if (isLoggedIn) {
-            navigate(`/${userid}/updatedetail`);
-        } else {
-            navigate('/signin');
-        }
-    };
-    const contactUsHandler = () => {
-        navigate('/contactUs');
+        dispatch(authActions.logout());
     }
     return (
         <AnimatePresence>
@@ -58,12 +55,13 @@ const Sidebar = () => {
                 onClick={(e) => { e.stopPropagation() }}
                 className={`${styles.sidebar} ${sidebarCtx.isSidebarOpen ? styles.open : ''}`}>
                 <ul style={{ listStyle: 'none' }}>
-                    <li className={styles.li}><Link to="/team">Our Team</Link></li>
-                    <li className={styles.li} onClick={xyzHandler}>{isLoggedIn === '1' ? 'Update Detail' : 'Login/Signup'}</li>
-                    <li className={styles.li} onClick={cartHandler}>Cart</li>
-                    <li className={styles.li} onClick={contactUsHandler}>Contact Us</li>
-                    <li className={styles.li} onClick={logoutHandler}>Logout</li>
+                    <li className={styles.li} onClick={() => { scroll('toppage', 0) }}>Home</li>
+                    <li className={styles.li} onClick={() => { scroll('login', 100) }}>Login</li>
+                    <li className={styles.li} onClick={() => { scroll("catagories", 100) }}>Courses</li>
+                    <li className={styles.li} onClick={() => { scroll('teampage', 50) }}>Our team</li>
+                    <li className={styles.li} onClick={() => { scroll("contact-us", 100) }}>Contact us</li>
                     <li className={styles.li} onClick={() => { sidebarCtx.toggleSidebar() }}>Close</li>
+                    {isAuth && <li className={styles.li} onClick={logoutHandler}>Logout</li>}
                 </ul>
             </motion.div>
         </AnimatePresence >

@@ -6,18 +6,21 @@ import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { ToLink } from "../App";
 import Modal from './../UI/Modal'
+import { scrollToHandler } from "../store/scrollTo";
+import { useDispatch } from "react-redux";
+import { authActions } from "../store/auth";
+
 const Signin = (props) => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [errormsg, setErrormsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [loginstate, setloginstate] = useState('Signup');
-  const codeInputRef = useRef();
   const nameInputRef = useRef();
   const phoneInputRef = useRef();
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
-  const addressInputRef = useRef();
 
   const handleTogglePassword = (e) => {
     e.preventDefault();
@@ -31,9 +34,6 @@ const Signin = (props) => {
     else {
       setloginstate("Signup")
     }
-  };
-  const forgotPasswordHandler = () => {
-    navigate("forgotpassword");
   };
 
 
@@ -49,24 +49,21 @@ const Signin = (props) => {
       emailid: enteredEmail,
       password: enteredPassword,
     };
-    if (props.pagename === "Signup") {
-      const enteredCode = codeInputRef.current.value;
-      data.code = enteredCode;
+    if (loginstate === "Signup") {
       enteredName = nameInputRef.current.value;
       data.name = enteredName;
       const enteredPhone = phoneInputRef.current.value;
       data.phoneno = enteredPhone;
-      const enteredAddress = addressInputRef.current.value;
-      data.address = enteredAddress;
       if (enteredName.trim().length === 0 || enteredPhone.trim().length === 0) { return setErrormsg("Please enter all the fields"); }
       if (enteredEmail.trim().length === 0) { return setErrormsg("Please enter all the fields"); }
     } else {
     }
-    const page = props.pagename.toLowerCase();
-
+    const page = loginstate.toLowerCase();
+    console.log(data);
     try {
       setIsLoading(true);
       let resp;
+      console.log(`${ToLink}/user/${page}`);
       resp = await axios.post(`${ToLink}/user/${page}`, data, {
         timeout: 30000,
       });
@@ -74,31 +71,31 @@ const Signin = (props) => {
       if (resp.status === 201 || resp.status === 200) {
         localStorage.setItem("isLoggedIn", "1");
         localStorage.setItem("email", enteredEmail);
-        if (props.pagename === "Login") {
+        if (loginstate === "Login") {
           localStorage.setItem("name", resp.data.name);
           localStorage.setItem("id", resp.data.id);
-          localStorage.setItem("address", resp.data.address);
           localStorage.setItem("phoneno", resp.data.phoneno);
         }
         emailInputRef.current.value = "";
         passwordInputRef.current.value = "";
-        if (props.pagename === "Signup") {
+        if (loginstate === "Signup") {
           localStorage.setItem("phoneno", phoneInputRef.current.value);
-          localStorage.setItem("address", addressInputRef.current.value);
           localStorage.setItem("name", enteredName);
           localStorage.setItem("id", resp.data.data.usersignup._id);
 
           nameInputRef.current.value = "";
           phoneInputRef.current.value = "";
-          addressInputRef.current.value = "";
         }
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
+        setErrormsg("Success")
+        dispatch(authActions.login());
+        scrollToHandler('toppage', 100);
+
       }
     } catch (error) {
       console.log(error);
-      if (error.code === "ERR_BAD_REQUEST") setErrormsg("Email already in use");
+      if (error.response.data.code === 11000) setErrormsg('Email already in use');
+      else if (error.response.data.message) setErrormsg(error.response.data.message)
+      else if (error.code === "ERR_BAD_REQUEST") setErrormsg(error.message || "Email already in use");
       else if (error.code === "ERR_BAD_RESPONSE")
         setErrormsg("Server Not Responding...");
       else setErrormsg("An error occurred. Please try again.");
@@ -162,7 +159,6 @@ const Signin = (props) => {
             exit={{ height: 0 }}
             className={"small d-flex justify-content-end font-monospace row text-dark " + classes.signin}
             style={{ fontSize: "2vh" }}
-            onClick={forgotPasswordHandler}
           >
 
             <div className="input-group mb-3">
@@ -232,7 +228,7 @@ const Signin = (props) => {
             type="submit"
             onClick={signupLoginHandler}
           >
-            {props.pagename}
+            {loginstate}
           </button>
         </div>
         <div className={classes.pagechange}>
@@ -250,12 +246,12 @@ const Signin = (props) => {
               exit={{ height: 0 }}
               className={"small d-flex justify-content-end font-monospace row text-dark " + classes.signin}
               style={{ fontSize: "2vh" }}
-              onClick={forgotPasswordHandler}
+              // onClick={forgotPasswordHandler}
+              onClick={props.onChooseForgotPass}
             >
-              {" "}
               {loginstate === "Login"
                 ? "Forgot Password?"
-                : "                  "}
+                : ""}
             </motion.p>
           </b>
         </div>

@@ -1,3 +1,11 @@
+.full {
+  width: 100vw;
+  /* height: 150vh; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom, #09161f, #2470a2, #ffff);
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -7,10 +15,10 @@
   position: relative;
   align-content: center;
   width: max-content;
-  margin: 2.5rem 0rem -10.5rem 0rem;
-  margin-left: 35.5rem;
+  /* margin: 2.5rem 0rem -10.5rem 0rem;
+  margin-left: 20vw; */
 }
-.signin{
+.signin {
   cursor: pointer;
 }
 .form {
@@ -63,15 +71,15 @@
 }
 .box {
   position: relative;
-  top:-100px;
-  left:-100px;
+  top: -100px;
+  left: -100px;
   background-color: rgb(175, 242, 242);
   padding: 20px;
   border-radius: 50%;
   scale: 300%;
   z-index: 1;
 }
-#Forgot{
+#Forgot {
   position: relative;
   top: 0px;
   left: 0px;

@@ -23,15 +23,16 @@ export default function CategoriesMain() {
                 <CourseSectionMain id='WEB-DEV' title="WEB-DEV" playlistid="PLoYCgNOIyGAB_8_iq1cL8MVeun7cB6eNc" />
                 <CourseSectionMain id='GAME-DEV' title="GAME-DEV" playlistid="PLdOT12odxrUrUExBUuM5KoN0fAnOdzH1L" />
             </section>
-            <iframe
+            {/* <iframe
                 title="123"
                 width="1000"
                 height="500"
                 src="https://www.youtube.com/embed/videoseries?list=PLxyGaR3hEy3j2EpdM6bvkA2Q87ey5j0sU"
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-            ></iframe>
+                allowFullScreen
+            ></iframe> */}
+
         </div>
     );
 }
