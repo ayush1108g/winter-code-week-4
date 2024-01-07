@@ -22,8 +22,6 @@
 #catagories li {
   width: 12rem;
   text-align: center;
-  /* border: 2px grey solid; */
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); */
 }
 
 #catagories li img {
@@ -34,19 +32,17 @@
 }
 
 #catagories li h5 {
-  /* margin: 0.5rem 0; */
   font-size: 14px;
 }
 
 #categoryMain {
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; */
-  /* width: 13%; */
-  /* min-width: fit-content; */
+  background-color: whitesmoke;
   padding: 10px 0 10px 0;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+#categoryMain:hover {
+  transform: scale(0.9);
 }

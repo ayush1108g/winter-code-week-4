@@ -1,4 +1,3 @@
-import CourseDetail from "./components/course-detail/course-detail.jsx";
 import Footer from "./components/footer/mainFooter.jsx";
 import "bootstrap/dist/css/bootstrap.min.css";
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
@@ -7,17 +6,8 @@ import { AnimatePresence } from "framer-motion";
 import Navbar from "./components/Navbar";
 import { useContext, useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import SidebarContext from "./store/sidebar-context";
-import SidebarContextProvider from "./store/sidebarContextProvider";
-import classes from "./App.module.css";
-
-// import Card from "./components/Card.jsx";
-// import CourseDetail from "./components/course-detail";
-// import SideBar from "./components/SideBar";
-// import LoginPage from "./pages/LoginPage";
-// import CategoriesMain from "./components/categories/categoriesMain";
-// import SignUpForm from './components/signup1'
-
+import SidebarContext from "./store/context/sidebar-context";
+import SidebarContextProvider from "./store/context/sidebarContextProvider";
 import SignupPage from "./pages/SignupPage";
 import HomePage from "./pages/HomePage";
 import Errorpage from "./pages/Errorpage";
@@ -29,30 +19,26 @@ import PlaylistPage from './pages/playlistPage.jsx'
 import IMAGE1 from "./store/IMAGE1.jpg";
 import { useNavigate } from "react-router-dom";
 import { scrollToHandler } from "./store/scrollTo.js";
-import { authActions } from "./store/auth.js";
+import { authActions } from "./store/redux/auth.js";
 
-// export const ToLink = "https://ecommerce-web-lwxy.onrender.com";
-export const ToLink = "http://127.0.0.1:8000";
+export const ToLink = "https://education-management.onrender.com";
+// export const ToLink = "http://127.0.0.1:8000";
 
 function RoutesWithAnimation() {
   const location = useLocation();
-
-
-  console.log(location);
+  //console.log(location);
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.key}>
-        {/* <Route path="/login" element={<LoginPage />} /> */}
         <Route path="/forgotpassword" element={<ForgotPassPage />} />
         <Route path="/forgotpassword/:id" element={<ForgotPassIDPage />}
         />
         <Route path="/forgotpassword/:id/confirm" element={<ForgotPassConfirmPage />}
         />
-        {/* <Route path="/signup" element={<SignupPage />} /> */}
         <Route path="/team" element={<TeamPage />} />
-        <Route path="/" element={<HomePage />} />
-        <Route path="/course/:id" element={<CourseDetail />} />
+        {/* <Route path="/course/:id" element={<CourseDetail />} /> */}
         <Route path="/playlist/:playlistid" element={<PlaylistPage />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="*" element={<Errorpage />} />
       </Routes>
     </AnimatePresence>
@@ -68,14 +54,11 @@ function MainComp() {
   const isAuth = useSelector(state => state.auth.isAuthenticated);
   const isLoggedIn = isAuth;
 
-  console.log(isAuth);
-  // const [isLoggedIn, setIsloggedIn] = useState(localStorage.getItem('isLoggedIn'));
-
   useEffect(() => {
     if (localStorage.getItem('isLoggedIn')) {
       dispatch(authActions.login());
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const x = location.pathname.split('/');
@@ -89,11 +72,9 @@ function MainComp() {
 
   const closeSidebarHandler = () => {
     sidebarCtx.closeSidebar();
-    console.log("clicked");
   };
   const forgotpassHandler = () => {
     setforgotpassState(true);
-    console.log('123321');
     navigate("forgotpassword");
     setTimeout(() => {
       scrollToHandler("forgotPasswordPage", 100);

@@ -1,14 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router';
-import { useNavigate } from 'react-router';
-import { scrollToHandler } from '../store/scrollTo';
-import { useSelector } from 'react-redux';
+
 const YouTubePlaylistPage = () => {
-    const navigate = useNavigate();
     const { playlistid } = useParams();
     const [playlist, setPlaylist] = useState(null);
-    // 
 
     useEffect(() => {
         const link = "https://www.googleapis.com/youtube/v3/playlists";
@@ -20,10 +16,8 @@ const YouTubePlaylistPage = () => {
         const send = async () => {
             try {
                 const response = await axios.get(link, { params: params });
-                console.log(response.data.items[0]);
                 setPlaylist(response.data.items[0]);
             } catch (error) {
-                console.log(error);
             }
         }
         send();

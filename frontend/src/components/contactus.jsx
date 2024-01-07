@@ -20,13 +20,13 @@ const ContactUs = () => {
         if (!data.email.includes('@')) return alert('Please enter a valid email address!');
         try {
             const response = await axios.post(`${ToLink}/api/feedback`, data);
-            console.log(response);
+            //console.log(response);
             alert('Thank you for your feedback!');
             name.current.value = '';
             email.current.value = '';
             message.current.value = '';
         } catch (error) {
-            console.log(error);
+            //console.log(error);
             alert('Failed to send feedback!');
         }
     }

@@ -3,9 +3,7 @@
   height: max-content;
   background-color: #e0dbb4;
   position: fixed;
-  /* top: 0; */
   right: 0;
-  /* overflow-x: hidden; */
   transition: 0.5s;
   padding-top: 60px;
   opacity: 0.95;
@@ -13,7 +11,7 @@
 }
 
 .open {
-  width: 250px;
+  width: 175px;
 }
 
 .li {

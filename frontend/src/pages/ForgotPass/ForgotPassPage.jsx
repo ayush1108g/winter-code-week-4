@@ -52,28 +52,6 @@ const ForgotPassPage = () => {
     setIsLoading(false);
   };
 
-  const animateVariants = {
-    show: {
-      scale: [15, 0],
-      transition: {
-        times: [0, 1],
-        ease: "easeInOut",
-        duration: 0.5,
-      },
-    },
-    hide: {
-      scale: 0,
-    },
-    exit: {
-      scale: [0, 15],
-      transition: {
-        times: [0, 1],
-        ease: "easeInOut",
-        duration: 0.5,
-      },
-    },
-  };
-
   return (
     <>
       <div id='forgotPasswordPage' className={classes.full}>
@@ -84,15 +62,9 @@ const ForgotPassPage = () => {
             {!isLoading && <p className={classes.loading}> {errormsg}</p>}
             {isLoading && (
               <div className="spinner-border text-danger" role="status">
-                {/* <span className="sr-only">Loading...</span> */}
               </div>
             )}
-            {/* <motion.div
-              variants={animateVariants}
-              // animate="show"
-              exit="exit"
-              className={classes.box}
-            ></motion.div> */}
+
             <p className="h2">Forgot Password</p>
             <p>Enter your email to reset your password.</p>
             <div className="input-group mb-3">

@@ -1,15 +1,15 @@
-import AyushBW from "../store/AyushPhoto-removebg-bw.png";
-import Ayush from "../store/AyushPhoto-removebg-color.png";
-import DivyaBW from "../store/Divya-removebg-bw.png";
-import Divya from "../store/Divya-removebg-color.png";
-import PushkarBW from "../store/Pushkar-removebg-bw.png";
-import Pushkar from "../store/Pushkar-removebg-color.png";
+import AyushBW from "../store/data/AyushPhoto-removebg-bw.png";
+import Ayush from "../store/data/AyushPhoto-removebg-color.png";
+import DivyaBW from "../store/data/Divya-removebg-bw.png";
+import Divya from "../store/data/Divya-removebg-color.png";
+import PushkarBW from "../store/data/Pushkar-removebg-bw.png";
+import Pushkar from "../store/data/Pushkar-removebg-color.png";
 import { CiLinkedin } from "react-icons/ci";
 import { FaInstagram } from "react-icons/fa";
 import { SiGmail } from "react-icons/si";
 import { FaGithub } from "react-icons/fa6";
 import { useState } from "react";
-import data from "../store/data";
+import data from "../store/data/data";
 
 const TeamPage = () => {
     const [isHoveredAyush, setIsHoveredAyush] = useState(false);

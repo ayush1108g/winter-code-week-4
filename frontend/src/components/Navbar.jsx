@@ -2,16 +2,12 @@ import classes from "./Navbar.module.css";
 import { scrollToHandler } from "../store/scrollTo";
 import { useNavigate } from "react-router";
 import { useLocation } from "react-router-dom";
-// import { motion } from "framer-motion";
 import { GiHamburgerMenu } from "react-icons/gi";
-import SidebarContext from "../store/sidebar-context";
+import SidebarContext from "../store/context/sidebar-context";
 import { useContext } from "react";
 import Sidebar from "./SideBar";
 import { useDispatch, useSelector } from "react-redux";
-import { authActions } from "../store/auth";
-// import axios from 'axios';
-// import { ToLink } from '../App';
-// import { useRef } from "react";
+import { authActions } from "../store/redux/auth";
 const Navbar = () => {
   const sidebarCtx = useContext(SidebarContext);
   const isAuth = useSelector(state => state.auth.isAuthenticated);
@@ -21,7 +17,6 @@ const Navbar = () => {
   const location = useLocation();
   const scroll = (id, offset) => {
     if (location.pathname !== '/') {
-      console.log('/not')
       navigate('/');
       setTimeout(() => {
         scrollToHandler(id, offset);
