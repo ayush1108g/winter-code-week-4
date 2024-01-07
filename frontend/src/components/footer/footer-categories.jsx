@@ -28,18 +28,17 @@ export default function A() {
         <li className="footerCategoryLink"> &nbsp; Class 11th &nbsp; |</li>
         <li className="footerCategoryLink"> &nbsp; Zoology &nbsp; |</li>
         <li className="footerCategoryLink"> &nbsp; Geography &nbsp; |</li>
-        <li className="footerCategoryLink"> &nbsp; Boutany &nbsp;</li>
+        <li className="footerCategoryLink"> &nbsp; Botany &nbsp;</li>
       </div>
 
       <div className="footer-category-box">
         <h3 className="category-box-title">Exams :</h3>
 
-        <li className="footerCategoryLink">&nbsp; IIT-JEE&nbsp; |</li>
-        <li className="footerCategoryLink">&nbsp; Earrings &nbsp; |</li>
-        <li className="footerCategoryLink">&nbsp; NEET &nbsp; |</li>
+        <li className="footerCategoryLink" onClick={() => { scrollToHandler('JEE', 100) }}>&nbsp; IIT-JEE&nbsp; |</li>
+        <li className="footerCategoryLink" onClick={() => { scrollToHandler('NEET', 100) }}>&nbsp; NEET &nbsp; |</li>
         <li className="footerCategoryLink">&nbsp; NDA &nbsp; |</li>
         <li className="footerCategoryLink">&nbsp; Banking &nbsp; |</li>
-        <li className="footerCategoryLink">&nbsp;UPSC &nbsp; |</li>
+        <li className="footerCategoryLink" onClick={() => { scrollToHandler('UPSC', 100) }}>&nbsp;UPSC &nbsp; |</li>
         <li className="footerCategoryLink">&nbsp; KVPY &nbsp; |</li>
         <li className="footerCategoryLink">&nbsp; SSC &nbsp; |</li>
         <li className="footerCategoryLink">&nbsp; Railway&nbsp; |</li>
