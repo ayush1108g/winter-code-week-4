@@ -84,7 +84,7 @@ function MainComp() {
     <>
       <div onClick={closeSidebarHandler}  >
         <div className={`h2 d-flex align-item-center justify-content-center `} style={{ marginBottom: '0px', backgroundImage: 'linear-gradient(to bottom, #ffff, #2470a2)' }}>
-          Edu-Tech
+          𝓔𝓭𝓾-𝓣𝓮𝓬𝓱
         </div>
         <Navbar />
         <div id='toppage'>
